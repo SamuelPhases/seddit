@@ -1,0 +1,53 @@
+$bg-color:#ccc;
+$post--page--tab--color:#F2F8FD;
+
+$op--primary:#0079D310;
+$primary:#0079D3;
+$danger:#FF585B;
+$secondary:#ffffff;
+$premium-color:#ff4500;
+$input-color:#F6F7F8;
+$g--bg:#dae0e6;
+$border--color:#eee;
+
+
+// NAV COLOR
+$bg-white:$secondary;
+$bg-primary:$primary;
+
+// TREND COLOR
+$text-trend-primary-color:$secondary;
+
+// HEADER NAV COLOR 
+$btn-header-primary-color:#f6f7f8;
+$btn-header-secondary-color:#1c1c1c;
+
+// POST COLOR
+
+// POST HEADER COLOR
+$text-post-title-color:#222;
+$text-post-user-color:#1c1c1c;
+$text-post-user-info-color:#787C7E;
+$text-post-user-reaction-color:#787C7E;
+
+
+// POST FOOTER COLOR
+$text-post-footer-color:#8D8A8C;
+
+$sizes:(100,200,400,500,700);
+@each $size in $sizes {
+    .text-#{$size}{
+        font-weight: #{$size};
+    }
+}
+
+// SIDE CONTENT
+$text-side:#1A1A1B;
+
+.bg--white{
+    background-color: #fff;
+}
+
+.bg--danger{
+    background-color: $danger;
+}

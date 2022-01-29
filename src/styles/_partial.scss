@@ -1,0 +1,263 @@
+@import './colors';
+
+
+
+// .btn-primary{
+    // background-color: ;
+// }
+
+.border{
+  border: 1px solid #eee;
+  border-radius:3px;
+}
+
+.reg__container{
+    // width: 100vw;
+    // height: 100vh;
+    // background-color: #029;
+    display: flex;
+    &--wallpaper{
+        flex: 0.1;
+        background-color: #aaa;
+        display: flex;
+        align-items: stretch;
+    }
+    &--content{
+        flex: 0.9;
+        background-color: #fff;
+        height: 100%;
+    }
+}
+
+
+.btn{
+    font-weight: 700;
+    border: none;
+    background-color: transparent;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.btn--sm{
+    padding: 0.3em  1em;
+    border-radius: 20px;
+    font-size: 0.7rem;
+}
+
+.btn--lg{
+    padding: 0.5em  2em;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.btn--toggler{
+    padding: 0.6em  2em;
+    border-radius: 10px;
+}
+
+.btn--primary{
+    background-color: $primary;
+    color: #fff;
+}
+
+.btn--secondary{
+    border: 1px solid $primary;
+    background-color: transparent;
+    color: $primary;
+}
+
+.post__btn--footer{
+    padding: 0.5em  1em;
+    border-radius: 3px;
+    text-transform: capitalize;
+    border: none;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    transition: all 0.2s ease;
+    color: $text-post-footer-color;
+    // color: #fff;
+    cursor: pointer;
+    background-color: transparent;
+    &:hover{
+        background-color: #eee;
+    }
+}
+
+
+// FLEX Horizontal
+
+@mixin flex($direction: row, $position-x:center, $position-y:center) {
+    flex-direction: $direction;
+    display: flex;
+    align-items: $position-x;
+    justify-content: $position-y;
+    flex-wrap: wrap;
+}
+   
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex--btw{
+    @include  flex($position-x:center,$position-y:space-between)  
+}
+
+.flex--cen{
+    @include flex()
+}
+
+.flex--ar{
+    @include flex($position-x:center,$position-y:space-around)
+}
+
+// FLEX-Column
+.flexed{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+
+.flexed--btw{
+    @include  flex($direction:column,$position-x:center,$position-y:space-between)  
+}
+
+
+.flexed--cen{
+    @include flex($direction:column)
+}
+
+.flexed--ar{
+    @include flex($direction:column,$position-x:center,$position-y:space-around)
+}
+
+.flexed--start{
+@include  flex($direction:column,$position-x:flex-start,$position-y:space-between);
+height: 100%;  
+}
+
+.flex--start{
+@include  flex($position-y:flex-start);
+height: 100%;  
+}
+
+
+// PADDING
+$spacing:(0.5,1,2,3,4,5);
+
+@each $space in $spacing {
+    .px--#{$space}{
+        padding: 0em  #{$space}em;
+    }
+
+    .py--#{$space}{
+        padding: #{$space}em 0em;
+    }
+
+    .p--#{$space}{
+        padding: #{$space}em;
+    }
+
+    .mx--#{$space}{
+        margin: 0em  #{$space}em    ;
+    }
+
+    .my--#{$space}{
+        margin: #{$space}em  0em;
+    }
+
+    .m--#{$space}{
+        margin: #{$space}em ;
+    }
+}
+
+
+// Image
+
+.sm--dp{
+    width: 1rem;
+    height: 1rem;
+    background-color: #298000;
+    border-radius: 50%;
+    margin-right: 0.2em;
+}
+
+.sq__sm--dp{
+    width: 1.3rem;
+    height: 1.3rem;
+    background-color: #298000;
+    border-radius: 5px;
+    margin-right: 0.2em;
+}
+
+.md--dp{
+    width: 2rem;
+    height: 2rem;
+    background-color: #298000;
+    border-radius: 50%;
+    margin-right: 0.2em;
+}
+
+.sq__md--dp{
+    width: 2rem;
+    height: 2rem;
+    background-color: #298000;
+    border-radius: 5px;
+    margin-right: 0.2em;
+}
+
+
+.lg--dp{
+    width: 3rem;
+    height: 3rem;
+    background-color: #298000;
+    border-radius: 50%;
+    margin-right: 0.2em;
+}
+
+.community__card--btn{
+    padding: 0.5em  1em;
+    margin-right: 0.5em;
+    font-size: 0.8rem;
+    background-color: $op--primary;
+    border-radius: 15px;
+    color: $primary;
+}
+
+// CHIP SNIPPET
+ .chip{
+  background-color: $secondary;
+  width: 100%;
+  width: 500px;
+  padding: 0.5em  1em;
+  border: 1px solid $border--color;
+  border-radius: 3px;
+    &__bar{
+        // background-color: #288;
+        height: 100%;
+        li{
+        padding: 0.5em  1em;
+        border-radius: 20px;
+        background-color: transparent;
+        margin-right: 0.5em;
+        font-size: 0.9rem;
+        text-transform: capitalize;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: $text-post-footer-color;
+        font-weight: 500;
+        &:hover{
+            background-color: $g--bg;
+        }
+        &.active{
+            color: $primary;
+            background-color: $op--primary;
+        }
+        }
+    }
+}
